@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+var users=[]
+function user(name,img){
+    this.id=Math.random().toFixed(8).slice(2),
+    this.name=name,
+    this.image=img,
+    this.date=Date.now()
+    this.friends=[]
+}
+var user1=new user("Islam","abc.jpj")
+var user2=new user("Talha","abc.jpj")                             
+var user3=new user("Ebad","abc.jpj")
+users.push(user1,user2,user3)
+
+function addFri(userid,friend) {
+    for (let i = 0; i < users.length; i++) {
+        if(userid===users[i].id){
+            users[i].friends.push(friend)
+        }
+    }
+}
+
+function deletFri(user,friend) {
+    for (let i = 0; i < users.length; i++) {
+        if(user===users[i].id){
+            var deletFriend = users[i].friends.indexOf(friend)
+            users[i].friends.splice(deletFriend,1)
+        }
+        
+    }
+}
+
+
+
+    </script>
+
+
+</body>
+
+</html>
